@@ -1,0 +1,363 @@
+:root {
+      --color-bg-header: #ffffff;
+      --color-text-primary: #191919;
+      --color-nav-active: #3C60CF;
+      --color-nav-hover: #2D9ADE;
+      --color-nav-inactive: #334155;
+      --header-padding-y: 20px;
+      --header-padding-x-mobile: 20px;
+      --header-padding-x-desktop: 40px;
+      --max-width-container: 1400px;
+      --transition-default: all 0.25s ease;
+    }
+    
+/* ========== HEADER MAIN STYLES ========== */
+    .site-header {
+      background-color: var(--color-bg-header);
+      width: 100%;
+      position: sticky;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+      z-index: 100;
+      top: 0;
+    }
+
+    .header-container {
+      max-width: var(--max-width-container);
+      margin: 0 auto;
+      padding: var(--header-padding-y) var(--header-padding-x-mobile);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ===== LEFT SIDE: LOGO SECTION ===== */
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      z-index: 10;
+    }
+
+    /* Stylized "A" gradient icon (geometric / modern) */
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #3C60CF 0%, #2D9ADE 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 12px -6px rgba(60, 96, 207, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .logo-icon:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-icon span {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+      font-family: 'Inter', sans-serif;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-main {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--color-text-primary);
+      text-transform: uppercase;
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-primary);
+      opacity: 0.75;
+      margin-top: 2px;
+    }
+
+    /* ===== RIGHT SIDE: DESKTOP NAVIGATION ===== */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-direction: row;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--color-nav-inactive);
+      transition: var(--transition-default);
+      padding: 8px 0;
+      position: relative;
+      letter-spacing: -0.2px;
+    }
+
+    /* Active link styling (underline & color) */
+    .nav-link.active {
+      color: var(--color-nav-active);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-nav-active);
+      border-radius: 3px 3px 0 0;
+      transition: var(--transition-default);
+    }
+
+    /* Hover state: bright sky blue */
+    .nav-link:not(.active):hover {
+      color: var(--color-nav-hover);
+    }
+
+    /* Optional transition for smoothness */
+    .nav-link::after {
+      transition: transform 0.2s ease;
+    }
+
+    /* Mobile menu toggle button (hidden on desktop) */
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
+      position: relative;
+      z-index: 20;
+      border-radius: 30px;
+      transition: background 0.2s;
+    }
+
+    .mobile-toggle:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    .hamburger {
+      width: 26px;
+      height: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hamburger span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2.5px;
+      background-color: var(--color-text-primary);
+      border-radius: 3px;
+      transition: all 0.25s ease-in-out;
+    }
+
+    .hamburger span:nth-child(1) {
+      top: 0;
+    }
+    .hamburger span:nth-child(2) {
+      top: 8px;
+    }
+    .hamburger span:nth-child(3) {
+      top: 16px;
+    }
+
+    /* open (active) state for hamburger */
+    .mobile-toggle.open .hamburger span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+    .mobile-toggle.open .hamburger span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    .mobile-toggle.open .hamburger span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 8px;
+    }
+
+    /* ========== RESPONSIVE (MOBILE FIRST APPROACH) ========== */
+    @media (max-width: 992px) {
+      .nav-list {
+        gap: 24px;
+      }
+      .nav-link {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 16px 20px;
+      }
+
+      .mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        backdrop-filter: blur(0px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        z-index: 15;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.05);
+      }
+
+      .nav-menu.open {
+        transform: translateX(0%);
+      }
+
+      .nav-list {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 24px;
+      }
+
+      .nav-link {
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 10px 0;
+        display: inline-block;
+      }
+
+      .nav-link.active::after {
+        bottom: 4px;
+        height: 3px;
+        width: 70%;
+        left: 15%;
+      }
+
+      /* adjust logo icon size a tiny bit for better mobile proportion */
+      .logo-icon {
+        width: 42px;
+        height: 42px;
+      }
+      .logo-icon span {
+        font-size: 24px;
+      }
+      .logo-main {
+        font-size: 1.2rem;
+      }
+      .logo-sub {
+        font-size: 0.6rem;
+      }
+    }
+
+    .logo-image {
+  width: 175px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .logo-image {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 130px;
+    height: 38px;
+  }
+}
+
+    /* small extra break for very tight screens */
+    @media (max-width: 480px) {
+      .logo-wrapper {
+        gap: 8px;
+      }
+      .logo-main {
+        font-size: 1rem;
+      }
+      .logo-sub {
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+      }
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+      }
+      .logo-icon span {
+        font-size: 22px;
+      }
+    }
+
+    /* accessibility & focus states */
+    .nav-link:focus-visible {
+      outline: 2px solid var(--color-nav-active);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .mobile-toggle:focus-visible {
+      outline: 2px solid var(--color-nav-active);
+      outline-offset: 2px;
+    }
+
+     /* prevent scrollbar shift on mobile body hidden */
+  body.menu-open {
+    overflow: hidden;
+  }
+  /* additional fine tuning for underline positioning in responsive */
+  @media (max-width: 768px) {
+    .nav-link.active::after {
+      width: 60%;
+      left: 20%;
+      bottom: -2px;
+    }
+  }
+  @media (max-width: 480px) {
+    .nav-link.active::after {
+      width: 50%;
+      left: 25%;
+    }
+  }
+  /* focus clarity for touch devices */
+  .nav-link:active {
+    opacity: 0.8;
+    transition: none;
+  }
