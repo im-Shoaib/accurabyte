@@ -347,9 +347,7 @@
 
     /* small extra break for very tight screens */
     @media (max-width: 480px) {
-      .logo-wrapper {
-        gap: 8px;
-      }
+      
       .logo-main {
         font-size: 1rem;
       }
@@ -403,9 +401,7 @@
   }
 
   @media (max-width: 480px) {
-  .logo-wrapper {
-    gap: 8px;
-  }
+ 
   
   .logo-image {
     width: 38px;
@@ -413,11 +409,11 @@
   }
   
   .logo-main {
-    font-size: 0.85rem;
+    font-size: 1.3rem;
   }
   
   .logo-sub {
-    font-size: 0.45rem;
+    font-size: 0.4rem;
     letter-spacing: 0.05em;
   }
 }
