@@ -99,3 +99,43 @@
       }
     });
   })();
+
+  // ====== SMOOTH SCROLLING FOR ANCHOR LINKS ======
+  document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for same-page anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        
+        // Skip if it's just "#" or empty
+        if (targetId === '#' || targetId === '') return;
+        
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Update URL without jumping
+          history.pushState(null, null, targetId);
+        }
+      });
+    });
+    
+    // Smooth scroll when coming from another page with hash
+    if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        setTimeout(() => {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    }
+  });

@@ -4,7 +4,9 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+html {
+  scroll-behavior: smooth;
+}
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
       background: #f8fafc;
@@ -691,7 +693,7 @@
 .sec3-card--blue { border-color: var(--theme-border); box-shadow: 0 4px 12px rgba(60, 96, 207, 0.05);border-top: 2px solid #3C60CF; }
 .sec3-card--green { border-color: var(--theme-border); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.05);border-top: 2px solid #22C55E; }
 .sec3-card--orange { border-color: var(--theme-border); box-shadow: 0 4px 12px rgba(249, 115, 22, 0.05);border-top: 2px solid #F97316; }
-.sec3-card--purple { border-color: var(--theme-border); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.05);border-top: 2px solid #7C3AED; }
+.sec3-card--purple { border-color: var(--theme-border); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.05);border-top: 2px solid #146ef6; }
 
 .sec3-card--blue:hover { box-shadow: 0 12px 30px rgba(60, 96, 207, 0.12); }
 .sec3-card--green:hover { box-shadow: 0 12px 30px rgba(34, 197, 94, 0.12); }
@@ -798,7 +800,7 @@
 .sec3-cta--blue { color: #3C60CF; }
 .sec3-cta--green { color: #22C55E; }
 .sec3-cta--orange { color: #F97316; }
-.sec3-cta--purple { color: #7C3AED; }
+.sec3-cta--purple { color: #146ef6; }
 
 .sec3-cta-link .sec3-arrow {
   transition: transform 0.2s ease;
@@ -813,6 +815,38 @@
   opacity: 0.8;
 }
 
+/* Card Logo Styles - Replace icon + domain */
+.sec3-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+}
+
+.sec3-card-logo {
+  max-width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments for logos */
+@media (max-width: 1024px) {
+  .sec3-card-logo {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec3-card-logo {
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 550px) {
+  .sec3-card-logo {
+    max-width: 120px;
+  }
+}
 /* ========== RESPONSIVE ========== */
 
 /* Tablet: 2 columns */

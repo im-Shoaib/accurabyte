@@ -3,7 +3,9 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+html {
+  scroll-behavior: smooth;
+}
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
       background: #f8fafc;
@@ -489,10 +491,10 @@
   border-top: 3px solid #F97316;
 }
 .sec2-card--purple {
-  --card-accent: #7C3AED;
+  --card-accent: #146ef6;
   --card-accent-rgb: 124, 58, 237;
-  --card-border: rgba(124, 58, 237, 0.15);
-  border-top: 3px solid #7C3AED;
+  --card-border: rgba(58, 88, 237, 0.15);
+  border-top: 3px solid #146ef6;
 }
 
 .sec2-card {
@@ -639,6 +641,39 @@
   .sec2-filter-btn {
     padding: 8px 22px;
     font-size: 0.85rem;
+  }
+}
+
+/* Card Logo Styles - Replace icon + domain */
+.sec2-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+}
+
+.sec2-card-logo {
+  max-width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments for logos */
+@media (max-width: 1024px) {
+  .sec2-card-logo {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec2-card-logo {
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 550px) {
+  .sec2-card-logo {
+    max-width: 120px;
   }
 }
 

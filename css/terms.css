@@ -1,0 +1,570 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+html {
+  scroll-behavior: smooth;
+}
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ====== SECTION 1: Terms of Service / Legal Page Header ====== */
+
+.sec1-legal-header {
+  width: 100%;
+  padding: 80px 0 60px 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background decorative elements */
+.sec1-legal-header::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(60, 96, 207, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sec1-legal-header::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 154, 222, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sec1-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Top Row: 2-Column Layout ===== */
+.sec1-legal-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+/* Left Column: Text Content */
+.sec1-legal-text {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec1-eyebrow {
+  font-size: 0.85rem;
+font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #3C60CF;
+  margin-bottom: 16px;
+}
+
+.sec1-heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #191919;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.sec1-meta-row {
+  font-size: 0.85rem;
+  color: #191919;
+  margin-bottom: 32px;
+}
+
+.sec1-meta-row span {
+  color: #3C60CF;
+}
+
+.sec1-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #191919;
+  margin: 0 0 16px 0;
+}
+
+.sec1-paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Right Column: Graphic */
+.sec1-legal-graphic {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec1-graphic-image {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px -8px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.sec1-graphic-image:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Bottom Component: Platform Logos Bar ===== */
+.sec1-platforms-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 20px 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sec1-bar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.sec1-bar-icon {
+  max-width: 140px;
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.sec1-bar-item:hover .sec1-bar-icon {
+  transform: scale(1.05);
+}
+
+/* Remove vertical dividers since we don't need them with logos only */
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .sec1-platforms-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px 24px;
+  }
+
+  .sec1-bar-item {
+    flex: 0 0 auto;
+    min-width: 150px;
+  }
+
+  .sec1-bar-icon {
+    max-width: 130px;
+    height: 45px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .sec1-platforms-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 16px;
+  }
+
+  .sec1-bar-item {
+    min-width: auto;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 16px;
+  }
+
+  .sec1-bar-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .sec1-bar-icon {
+    max-width: 140px;
+    height: 45px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 380px) {
+  .sec1-platforms-bar {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .sec1-bar-item {
+    padding-bottom: 12px;
+  }
+
+  .sec1-bar-icon {
+    max-width: 120px;
+    height: 40px;
+  }
+}
+/* ========== RESPONSIVE ========== */
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+  .sec1-legal-header {
+    padding: 60px 0 50px 0;
+  }
+
+  .sec1-container {
+    padding: 0 24px;
+  }
+
+  .sec1-legal-wrap {
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .sec1-heading {
+    font-size: 2.2rem;
+  }
+
+  .sec1-paragraph {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet Portrait - Stack Vertically */
+@media (max-width: 768px) {
+  .sec1-legal-header {
+    padding: 50px 0 40px 0;
+  }
+
+  .sec1-container {
+    padding: 0 20px;
+  }
+
+  .sec1-legal-wrap {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .sec1-legal-text {
+    width: 100%;
+  }
+
+  .sec1-heading {
+    font-size: 2rem;
+  }
+
+  .sec1-legal-graphic {
+    width: 100%;
+  }
+
+  .sec1-graphic-image {
+    max-width: 350px;
+  }
+
+  .sec1-bar-item:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Add horizontal borders for 2x2 layout */
+  .sec1-bar-item:nth-child(1),
+  .sec1-bar-item:nth-child(2) {
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 16px;
+  }
+
+  .sec1-bar-item:nth-child(1),
+  .sec1-bar-item:nth-child(3) {
+    border-right: 1px solid #E2E8F0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .sec1-legal-header {
+    padding: 40px 0 30px 0;
+  }
+
+  .sec1-container {
+    padding: 0 16px;
+  }
+
+  .sec1-eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+  }
+
+  .sec1-heading {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+
+  .sec1-meta-row {
+    font-size: 0.75rem;
+    margin-bottom: 24px;
+  }
+
+  .sec1-paragraph {
+    font-size: 0.85rem;
+  }
+
+  .sec1-graphic-image {
+    display: none;
+  }
+
+}
+
+/* ====== SECTION 2: Terms of Service / Legal Content Grid ====== */
+
+.sec2-legal-content {
+  width: 100%;
+  padding: 60px 0 80px 0;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.sec2-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.sec2-legal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Individual Legal Item - Card Style with Borders */
+.sec2-legal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.sec2-legal-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border-color: rgba(60, 96, 207, 0.3);
+}
+
+/* Theme Colors */
+.sec2-item--blue {
+  --legal-accent: #3C60CF;
+  --legal-bg: rgba(60, 96, 207, 0.1);
+}
+.sec2-item--green {
+  --legal-accent: #22C55E;
+  --legal-bg: rgba(34, 197, 94, 0.1);
+}
+.sec2-item--purple {
+  --legal-accent: #7C3AED;
+  --legal-bg: rgba(124, 58, 237, 0.1);
+}
+.sec2-item--orange {
+  --legal-accent: #F97316;
+  --legal-bg: rgba(249, 115, 22, 0.1);
+}
+
+/* Legal Badge */
+.sec2-legal-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--legal-bg);
+  color: var(--legal-accent);
+  transition: all 0.3s ease;
+}
+
+.sec2-legal-item:hover .sec2-legal-badge {
+  transform: scale(1.05);
+  background: var(--legal-accent);
+  color: #FFFFFF;
+}
+
+.sec2-legal-badge svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Legal Text Content */
+.sec2-legal-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec2-legal-text h3 {
+  font-size: 1rem;
+  color: #191919;
+  margin: 0 0 10px 0;
+}
+
+.sec2-legal-text p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #191919;
+  margin: 0 0 12px 0;
+}
+
+.sec2-legal-text ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.sec2-legal-text li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #191919;
+  margin-bottom: 6px;
+}
+
+.sec2-legal-text li:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact List inside Section 14 */
+.sec2-contact-list {
+  list-style: none;
+  padding-left: 0 !important;
+  margin-top: 8px;
+}
+
+.sec2-contact-list li {
+  margin-bottom: 8px;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+  .sec2-legal-content {
+    padding: 50px 0 60px 0;
+  }
+
+  .sec2-container {
+    padding: 0 24px;
+  }
+
+  .sec2-legal-grid {
+    gap: 20px;
+  }
+
+  .sec2-legal-item {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .sec2-legal-badge {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sec2-legal-badge svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sec2-legal-text h3 {
+    font-size: 0.95rem;
+  }
+
+  .sec2-legal-text p,
+  .sec2-legal-text li {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet Portrait - Single Column */
+@media (max-width: 768px) {
+  .sec2-legal-content {
+    padding: 40px 0 50px 0;
+  }
+
+  .sec2-container {
+    padding: 0 20px;
+  }
+
+  .sec2-legal-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .sec2-legal-content {
+    padding: 30px 0 40px 0;
+  }
+
+  .sec2-container {
+    padding: 0 16px;
+  }
+
+  .sec2-legal-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .sec2-legal-badge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sec2-legal-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sec2-legal-text h3 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .sec2-legal-text p,
+  .sec2-legal-text li {
+    font-size: 0.78rem;
+  }
+}
