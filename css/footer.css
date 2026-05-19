@@ -48,8 +48,7 @@
 }
 
 .sec7-footer-logo {
-  width: 210px;
-  height: auto;
+  height: 38px;
   object-fit: contain;
 }
 
@@ -190,6 +189,40 @@
   margin: 0;
 }
 
+/* Footer Logo with Text */
+.sec7-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.sec7-footer-logo {
+ 
+  object-fit: contain;
+}
+
+.sec7-footer-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.sec7-footer-main {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #191919;
+}
+
+.sec7-footer-sub {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #191919;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
 /* ========== RESPONSIVE ========== */
 
 /* Tablet Landscape */
@@ -211,9 +244,7 @@
     grid-column: span 3;
   }
 
-  .sec7-footer-logo {
-    width: 160px;
-  }
+  
 }
 
 /* Tablet Portrait */
@@ -243,9 +274,7 @@
     padding-top: 20px;
   }
 
-  .sec7-footer-logo {
-    width: 150px;
-  }
+ 
 }
 
 /* Mobile */
@@ -267,9 +296,7 @@
     grid-column: span 1;
   }
 
-  .sec7-footer-logo {
-    width: 140px;
-  }
+ 
 
   .sec7-footer-heading {
     margin-bottom: 16px;

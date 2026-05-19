@@ -36,7 +36,7 @@
     .logo-wrapper {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 2px;
       text-decoration: none;
       z-index: 10;
     }
@@ -78,7 +78,7 @@
       font-weight: 800;
       letter-spacing: -0.3px;
       color: var(--color-text-primary);
-      text-transform: uppercase;
+      
     }
 
     .logo-sub {
@@ -90,6 +90,29 @@
       opacity: 0.75;
       margin-top: 2px;
     }
+
+    /* Logo text group styles - next to image */
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-main {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--color-text-primary);
+}
+
+.logo-sub {
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+  opacity: 0.7;
+  margin-top: 2px;
+}
 
     /* ===== RIGHT SIDE: DESKTOP NAVIGATION ===== */
     .nav-menu {
@@ -281,10 +304,27 @@
       .logo-sub {
         font-size: 0.6rem;
       }
+
+      /* Logo adjustments for mobile */
+  .logo-image {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .logo-main {
+    font-size: 0.9rem;
+  }
+  
+  .logo-sub {
+    font-size: 0.5rem;
+  }
+  
+  .logo-text-group {
+    display: flex; /* Keep visible on mobile when logo is small */
+  }
     }
 
     .logo-image {
-  width: 210px;
   height: 30px;
   object-fit: contain;
   display: block;
@@ -361,3 +401,23 @@
     opacity: 0.8;
     transition: none;
   }
+
+  @media (max-width: 480px) {
+  .logo-wrapper {
+    gap: 8px;
+  }
+  
+  .logo-image {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .logo-main {
+    font-size: 0.85rem;
+  }
+  
+  .logo-sub {
+    font-size: 0.45rem;
+    letter-spacing: 0.05em;
+  }
+}
